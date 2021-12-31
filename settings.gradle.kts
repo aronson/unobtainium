@@ -1,16 +1,13 @@
-rootProject.name = "fabric-example-mod-kotlin-with-kotlin-dsl"
 pluginManagement {
     repositories {
-        jcenter()
-        maven("https://maven.fabricmc.net/") {
-            name = "Fabric"
-        }
+        maven("https://maven.fabricmc.net") { name = "Fabric" }
+        mavenCentral()
         gradlePluginPortal()
     }
-
     plugins {
-        id("fabric-loom") version "0.8-SNAPSHOT"
-        id("org.jetbrains.kotlin.jvm") version "1.5.0"
+        val loomVersion: String by settings
+        id("fabric-loom").version(loomVersion)
+        val kotlinVersion: String by System.getProperties()
+        kotlin("jvm").version(kotlinVersion)
     }
-
 }

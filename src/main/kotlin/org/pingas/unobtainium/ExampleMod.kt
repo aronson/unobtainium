@@ -1,4 +1,4 @@
-package net.fabricmc.example
+package org.pingas.unobtainium
 
 import net.fabricmc.api.ModInitializer
 
